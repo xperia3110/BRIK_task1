@@ -110,7 +110,6 @@ class _ManufacturingScreenState extends State<ManufacturingScreen>
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
     
-    // FIXED DIMENSIONS - Same as software screen
     final topSectionHeight = screenHeight * 1.0;    // Full screen height
     final bottomSectionHeight = screenHeight * 0.75; // 75% of screen
     
@@ -123,7 +122,7 @@ class _ManufacturingScreenState extends State<ManufacturingScreen>
           SlideTransition(
             position: _topSectionAnimation,
             child: Container(
-              height: topSectionHeight, // FIXED: Full screen height
+              height: topSectionHeight, 
               width: screenWidth,
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -150,13 +149,11 @@ class _ManufacturingScreenState extends State<ManufacturingScreen>
                       ),
                     ),
                   ),
-                  
-                  // MANUFACTURING VISUAL ELEMENTS - REMOVED CUSTOM PAINT
+
                   SlideTransition(
                     position: _elementsAnimation,
                     child: Stack(
                       children: [
-                        // GEAR ICON - positioned in top-right
                         Positioned(
                           top: 110,
                           right: 28,
@@ -190,7 +187,7 @@ class _ManufacturingScreenState extends State<ManufacturingScreen>
             child: SlideTransition(
               position: _bottomSectionAnimation,
               child: Container(
-                height: bottomSectionHeight, // FIXED: 75% of screen
+                height: bottomSectionHeight, // 75% of screen
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -235,9 +232,9 @@ class _ManufacturingScreenState extends State<ManufacturingScreen>
             ),
           ),
           
-          // MAIN HEADING - FIXED POSITIONING
+          // MAIN HEADING 
           Positioned(
-            top: bottomSectionHeight - 580, // FIXED: Same calculation as software
+            top: bottomSectionHeight - 580, 
             left: 10,
             child: SlideTransition(
               position: _headingAnimation,
