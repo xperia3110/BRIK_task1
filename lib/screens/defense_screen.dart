@@ -110,7 +110,6 @@ class _DefenseScreenState extends State<DefenseScreen>
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
     
-    // FIXED DIMENSIONS - Same as software screen
     final topSectionHeight = screenHeight * 1.0;    // Full screen height
     final bottomSectionHeight = screenHeight * 0.75; // 75% of screen
     
@@ -151,12 +150,10 @@ class _DefenseScreenState extends State<DefenseScreen>
                     ),
                   ),
                   
-                  // DEFENSE VISUAL ELEMENTS - REMOVED CUSTOM PAINT
                   SlideTransition(
                     position: _elementsAnimation,
                     child: Stack(
                       children: [
-                        // SHIELD ICON - positioned in top-right
                         Positioned(
                           top: 110,
                           right: 40,
@@ -182,7 +179,6 @@ class _DefenseScreenState extends State<DefenseScreen>
             ),
           ),
           
-          // BOTTOM SECTION WITH CONTENT
           Positioned(
             bottom: 0,
             left: 0,
@@ -235,9 +231,9 @@ class _DefenseScreenState extends State<DefenseScreen>
             ),
           ),
           
-          // MAIN HEADING - FIXED POSITIONING
+          // MAIN HEADING 
           Positioned(
-            top: bottomSectionHeight - 580, // FIXED: Same calculation as software
+            top: bottomSectionHeight - 580, 
             left: 25,
             child: SlideTransition(
               position: _headingAnimation,
