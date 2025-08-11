@@ -81,7 +81,7 @@ class _HealthcareScreenState extends State<HealthcareScreen>
     _startAnimations();
   }
 
-  // ANIMATION SEQUENCE METHOD - FIXED TIMING
+  // ANIMATION SEQUENCE METHOD 
   void _startAnimations() async {
     await Future.delayed(const Duration(milliseconds: 10));
     _topSectionController.forward();
@@ -110,7 +110,6 @@ class _HealthcareScreenState extends State<HealthcareScreen>
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
     
-    // FIXED DIMENSIONS - Same as software screen
     final topSectionHeight = screenHeight * 1.0;    // Full screen height
     final bottomSectionHeight = screenHeight * 0.75; // 75% of screen
     
@@ -151,12 +150,10 @@ class _HealthcareScreenState extends State<HealthcareScreen>
                     ),
                   ),
                   
-                  // HEALTHCARE VISUAL ELEMENTS - REMOVED CUSTOM PAINT
                   SlideTransition(
                     position: _elementsAnimation,
                     child: Stack(
                       children: [
-                        // MEDICAL CROSS - positioned in top-right
                         Positioned(
                           top: 110,
                           right: 30,
@@ -190,7 +187,7 @@ class _HealthcareScreenState extends State<HealthcareScreen>
             child: SlideTransition(
               position: _bottomSectionAnimation,
               child: Container(
-                height: bottomSectionHeight, // FIXED: 75% of screen
+                height: bottomSectionHeight, //75% of screen
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -235,9 +232,9 @@ class _HealthcareScreenState extends State<HealthcareScreen>
             ),
           ),
           
-          // MAIN HEADING - FIXED POSITIONING
+          // MAIN HEADING 
           Positioned(
-            top: bottomSectionHeight - 580, // FIXED: Same calculation as software
+            top: bottomSectionHeight - 580,
             left: 10,
             child: SlideTransition(
               position: _headingAnimation,
