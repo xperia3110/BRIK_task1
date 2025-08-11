@@ -81,7 +81,7 @@ class _FinanceScreenState extends State<FinanceScreen>
     _startAnimations();
   }
 
-  // ANIMATION SEQUENCE METHOD - FIXED TIMING
+  // ANIMATION SEQUENCE METHOD
   void _startAnimations() async {
     await Future.delayed(const Duration(milliseconds: 10));
     _topSectionController.forward();
@@ -110,7 +110,6 @@ class _FinanceScreenState extends State<FinanceScreen>
     final screenHeight = MediaQuery.of(context).size.height;
     final screenWidth = MediaQuery.of(context).size.width;
     
-    // FIXED DIMENSIONS - Same as software screen
     final topSectionHeight = screenHeight * 1.0;    // Full screen height
     final bottomSectionHeight = screenHeight * 0.75; // 75% of screen
     
@@ -123,7 +122,7 @@ class _FinanceScreenState extends State<FinanceScreen>
           SlideTransition(
             position: _topSectionAnimation,
             child: Container(
-              height: topSectionHeight, // FIXED: Full screen height
+              height: topSectionHeight, // Full screen height
               width: screenWidth,
               decoration: const BoxDecoration(
                 gradient: LinearGradient(
@@ -151,12 +150,10 @@ class _FinanceScreenState extends State<FinanceScreen>
                     ),
                   ),
                   
-                  // FINANCE VISUAL ELEMENTS - REMOVED CUSTOM PAINT
                   SlideTransition(
                     position: _elementsAnimation,
                     child: Stack(
                       children: [
-                        // DOLLAR SIGN - positioned in top-right
                         Positioned(
                           top: 110,
                           right: 40,
@@ -190,7 +187,7 @@ class _FinanceScreenState extends State<FinanceScreen>
             child: SlideTransition(
               position: _bottomSectionAnimation,
               child: Container(
-                height: bottomSectionHeight, // FIXED: 75% of screen
+                height: bottomSectionHeight, //  75% of screen
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
@@ -235,9 +232,9 @@ class _FinanceScreenState extends State<FinanceScreen>
             ),
           ),
           
-          // MAIN HEADING - FIXED POSITIONING
+          // MAIN HEADING 
           Positioned(
-            top: bottomSectionHeight - 580, // FIXED: Same calculation as software
+            top: bottomSectionHeight - 580, 
             left: 25,
             child: SlideTransition(
               position: _headingAnimation,
